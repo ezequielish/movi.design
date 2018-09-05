@@ -1,0 +1,229 @@
+body{
+    margin: 0;
+}
+.contenedor{
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 70px 1fr;
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav{
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+    display: grid;    
+    grid-template-columns: 200px 1fr 1fr;
+    grid-template-rows: 100px;
+    align-content: center;
+}
+
+nav .img{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 0;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 1px red;
+    font-size: 1.2em;
+    align-self: center;
+    justify-content: center;
+}
+nav .img div{
+    padding-top:8px;
+}
+nav input{
+    grid-column: 2 / span -2;
+    height: 20px;
+    width: 600px;
+    align-self: center;
+}
+nav .usuario{
+    grid-column: 3 / span -3;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+nav .usuario span{
+    margin-left: 5px; 
+}
+nav .usuario span:hover{
+    cursor: pointer; 
+}
+nav .usuario figure{
+    margin: 8px;
+}
+nav .usuario img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.navegador{
+    background-color: #ff7979;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+}
+.barra_l{
+    display: none;
+}
+.navegador ul{
+    display: grid;
+    grid-template-rows: repeat(3,100px) 1fr;
+    width: 100%;
+    padding: 0;
+}
+.navegador ul li{
+    list-style: none;
+    align-self: center;
+    text-align: center;
+}
+.navegador ul a{
+    text-decoration: none;
+    color:white;
+    display: grid;   
+}
+.navegador ul a:nth-of-type(4){
+    align-self: end;
+}
+.peliculas{
+    padding: 25px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    background-color: #f2f2f2;
+    -webkit-box-shadow: inset -1px 5px 9px -4px rgba(102,102,102,1);
+    -moz-box-shadow: inset -1px 5px 9px -4px rgba(102,102,102,1);
+    box-shadow: inset -1px 5px 9px -4px rgba(102,102,102,1);
+}
+.peliculas section{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 40px 1fr;
+    justify-items: center;
+    grid-gap: 15px;
+    grid-column-gap: 25px;
+}
+.peliculas section h4{
+    grid-column: 1 / span 1;
+    justify-self: start;
+}
+.peliculas section .peli{
+    grid-row: 2 / span 2;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.peliculas .info-peli{
+    position: absolute;
+    top:100px;
+    height: 100%;
+    line-height: 1.5;
+    color: white;
+    background-color: rgba(245, 74, 74, .9);
+    transition: 1s top ease-out;
+}
+.peliculas .info-peli:hover{
+    top:0px;
+}
+.peliculas .info-peli h4{
+    font-size: 1.2em;
+    padding: 5px;
+    margin-bottom: 0;
+}
+.peliculas .info-peli p{
+    font-size: .8em;
+    padding: 10px;
+    text-align: justify;
+    margin-top:0;
+}
+.peliculas .info-peli button{
+    border: none;
+    font-size: .8em;
+    box-shadow: 2px 2px 2px grey;
+    background: #eeeeee;
+}
+@media (max-width:1024px){
+    nav input{
+        width: 450px;
+    }
+    nav .usuario img{
+        width: 30px;
+        height: 30px;
+    }
+    .peliculas .info-peli{
+        top:65px;        
+    }
+    .peliculas .info-peli h4{
+        font-size: .9em;
+        margin: 0px;
+    }
+    .peliculas .info-peli p{
+        font-size: .7em;
+        padding: 4px;
+        margin: 0px;
+    }
+}
+@media (max-width:768px){
+    nav input{
+        width:300px;
+    }
+    nav .usuario {
+        font-size: .8em;
+    }
+    .navegador{
+       // display: none;
+    }
+    .barra_l{
+      display: none;      
+    }
+    .navegador ul{
+        display: none;
+    }
+    .peliculas{
+        position: relative;
+        grid-column: 1 / span 2;
+    }
+    .barra_l{
+        display: block;
+        position: absolute;
+        background-color: #ff7979;
+        padding: 10px;
+        color:white;
+        cursor: pointer;
+    }
+    .peliculas section{
+        margin-top: 15px;
+        grid-template-columns: 1fr 1fr;
+    }
+    .peliculas section h4{
+        grid-column: 1 / span 2;
+    }
+    .peliculas section .peli{
+        grid-row:auto;
+        width: 85%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .peliculas .info-peli{
+        height: 100%;
+        padding: 5px;
+        top:100px;     
+    }
+    .peliculas .info-peli h4{
+       align-self: start;   
+    }
+    .peliculas .info-peli  p{
+       line-height: 1.5;
+    }
+    .peliculas .info-peli:hover{
+        top:0px;
+    }
+}   
