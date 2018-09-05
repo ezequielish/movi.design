@@ -153,6 +153,9 @@ nav .usuario img{
     nav input{
         width: 450px;
     }
+    .navegador ul{
+        //display: none;
+    }
     nav .usuario img{
         width: 30px;
         height: 30px;
@@ -177,26 +180,49 @@ nav .usuario img{
     nav .usuario {
         font-size: .8em;
     }
-    .navegador{
-       // display: none;
+    .navegadorToggle{
+        grid-column: 1 / span 1;
+        height: 400px;       
+        position: fixed;
+        top: 70px;
+        width: 80px; 
     }
     .barra_l{
       display: none;      
     }
     .navegador ul{
-        display: none;
+         display: none;
+    }
+    .navegador .navul{
+        display: block;
     }
     .peliculas{
         position: relative;
         grid-column: 1 / span 2;
     }
+    .peliculas h4{
+        margin-left: 25px;
+    }
+    .peliculasToggle{
+        grid-column: 2 / span 2;       
+    }
     .barra_l{
         display: block;
         position: absolute;
         background-color: #ff7979;
-        padding: 10px;
         color:white;
         cursor: pointer;
+    }
+    .barra_l i{
+        padding: 10px;
+    }
+    .barrabk{
+        transition: 1s transform ease;
+        transform: rotate(180deg);
+    }
+    .barrabkreverse{
+        transition: 1s transform ease;
+        transform: rotate(0deg);
     }
     .peliculas section{
         margin-top: 15px;
@@ -227,3 +253,6 @@ nav .usuario img{
         top:0px;
     }
 }   
+@media (max-width:425px){
+
+}

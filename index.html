@@ -25,8 +25,8 @@
            </div>       
         </nav>    
       
-        <div class="navegador">            
-            <ul>
+        <div class="navegador" id="navegador">            
+            <ul id="navul" class="">
                 <a href="">
                     <li>
                         <i class="fas fa-home fa-2x"></i>
@@ -53,9 +53,9 @@
                 </a>
             </ul>
         </div>
-    <div class="peliculas">
-        <div class="barra_l">
-            <i class="fas fa-chevron-right  "></i>
+    <div class="peliculas" id="peliculas">
+        <div class="barra_l" id="btnbarra">
+             <i class="fas fa-chevron-right  "></i>
         </div>
         <section>
             <h4>Ahora en el cine</h4>
@@ -149,5 +149,48 @@
         </section>
     </div> 
 </div> 
+<script>
+    const btnabarra = document.getElementById('btnbarra')
+    const navegador = document.getElementById('navegador')
+    const navul = document.getElementById('navul');
+    const peliculas = document.getElementById('peliculas');
+
+    btnbarra.addEventListener('click', btnevent)
+    function btnevent(evt) 
+    {
+        if(evt.target.offsetParent.classList[1] == 'barrabk')
+        {
+            btnabarra.classList.add('barrabkreverse')
+            btnabarra.classList.remove('barrabk')
+            navul.classList.remove('navul')
+            peliculas.className = 'peliculas'
+        }else{
+            btnabarra.classList.add('barrabk')
+            btnabarra.classList.remove('barrabkreverse')
+            navul.classList.add('navul')         
+            navegador.classList.add('navegadorToggle')
+            peliculas.classList.add('peliculasToggle')
+
+        }
+    }
+    window.addEventListener('scroll', altScroll)
+    function altScroll()
+    {
+        if(this.scrollY > 50)
+        {
+
+            if(navegador.classList[1])
+            {
+                navegador.style.top = '0px'
+                btnabarra.style.position = 'fixed'
+                btnabarra.style.top = '0px'
+            }
+        }else{
+                navegador.style.top = '70px'
+                btnabarra.style.position = 'absolute'
+                btnabarra.style.top = '0px'
+        }
+    }
+</script>
 </body>
 </html>
