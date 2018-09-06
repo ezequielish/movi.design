@@ -1,2 +1,2 @@
 # movi.design
-Diseño app movies
+Diseño app movies con display:grid
